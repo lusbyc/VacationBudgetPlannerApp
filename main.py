@@ -66,8 +66,8 @@ Choose
             totalHoursF = "{:,}".format(totalHours)
             totalMinutes = "{:,}".format(totalHours * 60)
 
-            print(f"You're going to be in {destination} for {days} days. Put another way, you'll be there for {5totalHoursF} hours or {totalMinutes} minutes.") 
-
+            print(f"You're going to be in {destination} for {days} days. Put another way, you'll be there for {totalHoursF} hours or {totalMinutes} minutes.") 
+            print()
             print(f"You have {moneyFormatted} in USD for spending money. You can spend {moneyPerDay} per day.")
             print()
             print(f"If you convert this to {currencyName} you'll have {currencyFormatted} to spend for the trip. This is {currencyPerDay} per day.")
@@ -81,5 +81,6 @@ Enter 'Y' for Yes or 'N' for No: """).upper()
             print("""
 Thanks for using the Vacation Budget Planner!""")   
             break
+        break
 else:
     print("You've exceeded the maximum number of attempts.")
