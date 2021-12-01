@@ -75,7 +75,7 @@ Choose
             print(f"Enjoy your trip {name}!")
     
             keepGoing = input("""
-Would you like to use th5e Vacation Budget Planner again? 
+Would you like to use the Vacation Budget Planner again? 
 Enter 'Y' for Yes or 'N' for No: """).upper()
     
             print("""
