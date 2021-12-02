@@ -80,7 +80,6 @@ Choose
             keepGoing = input("""
 Would you like to use the Vacation Budget Planner again? 
 Enter 'Y' for Yes or 'N' for No: """).upper()
-            print (keepGoing)
         print("""
 Thanks for using the Vacation Budget Planner!""")   
         break
