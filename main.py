@@ -1,3 +1,5 @@
+import constant
+
 def switch(userInput):
     if userInput == 1:
         global destination 
@@ -7,15 +9,16 @@ def switch(userInput):
         global currencyPerDay
         destination = "Mexico"
         currencyName = "pesos"
-        currencyFormatted = "₱{:,.2f}".format(money * 21.92)
-        currencyPerDay = "₱{:,.2f}".format((money * 21.92) / days)
+        currencyFormatted = "₱{:,.2f}".format(money * constant.MEXICAN_EXCHANGE_RATE)
+        currencyPerDay = "₱{:,.2f}".format((money * constant.MEXICAN_EXCHANGE_RATE) / days)
         
     elif userInput == 2: 
         money 
         destination = "Jamaica"
         currencyName = "Jamaican Dollars"
-        currencyFormatted = "J${:,.2f}".format(money * 154.60)
-        currencyPerDay = "J${:,.2f}".format((money * 154.60) / days)
+        currencyFormatted = "J${:,.2f}".format(money * constant.JAMAICAN_EXCHANGE_RATE)
+        JAMAICAN_EXCHANGE_RATE = 100 #This line attempts to change the constant value. When program is run line 76 shows that the value wasn't changed.
+        currencyPerDay = "J${:,.2f}".format((money * constant.JAMAICAN_EXCHANGE_RATE) / days)
 
     else:   
         print()
@@ -62,9 +65,9 @@ Choose
             moneyFormatted = "${:,.2f}".format(money)
             moneyPerDay = "${:,.2f}".format(money / days)
 
-            totalHours = days * 24
+            totalHours = days * constant.MINUTES_PER_HOUR
             totalHoursF = "{:,}".format(totalHours)
-            totalMinutes = "{:,}".format(totalHours * 60)
+            totalMinutes = "{:,}".format(totalHours * constant.HOURS_PER_DAY)
 
             print(f"You're going to be in {destination} for {days} days. Put another way, you'll be there for {totalHoursF} hours or {totalMinutes} minutes.") 
             print()
@@ -77,10 +80,9 @@ Choose
             keepGoing = input("""
 Would you like to use the Vacation Budget Planner again? 
 Enter 'Y' for Yes or 'N' for No: """).upper()
-    
-            print("""
+            print (keepGoing)
+        print("""
 Thanks for using the Vacation Budget Planner!""")   
-            break
         break
 else:
     print("You've exceeded the maximum number of attempts.")
