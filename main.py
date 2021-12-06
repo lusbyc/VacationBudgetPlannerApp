@@ -1,8 +1,8 @@
 from pconst import const
 
-def switch(userInput):
-    if userInput == "1":
-        global destination 
+def switch(user_input):
+    if user_input == "1":
+        global destination  
         global money
         global currency_name
         global currency_formatted
@@ -13,7 +13,7 @@ def switch(userInput):
         currency_formatted = "₱{:,.2f}".format(money * const.MEXICAN_EXCHANGE_RATE)
         currency_per_day = "₱{:,.2f}".format((money * const.MEXICAN_EXCHANGE_RATE) / days)
         
-    elif userInput == "2": 
+    elif user_input == "2": 
         money 
         destination = "Jamaica"
         currency_name = "Jamaican Dollars"
